@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from "@angular/core";
+import { Component, EventEmitter, Input, OnInit, Output } from "@angular/core";
 import { CurrencyConversionData } from "src/app/models/currencyConversionData.entity";
 
 @Component({
@@ -8,12 +8,23 @@ import { CurrencyConversionData } from "src/app/models/currencyConversionData.en
 })
 
 export class ConverterCardComponent implements OnInit {
-    @Input('currencyConversionCardData') currencyConversionCardData: CurrencyConversionData[] = []
+    @Input('isLoading') isLoading: boolean = true
+    @Input('hasData') hasData: boolean = false
+    @Input('card') card: CurrencyConversionData = new CurrencyConversionData()
+    @Output() refreshEmmiter: EventEmitter<any> = new EventEmitter()
+
 
     constructor() {}
 
     ngOnInit() {
-        setTimeout(() => console.log("=>", this.currencyConversionCardData), 1000)
-       // console.log("=>", this.currencyConversionCardData)
+        if(this.card) {
+/*             this.isLoading = true
+            this.hasData = false */
+        }
     }
+
+    refreshData(refreshDataSubmit: boolean) {
+        this.refreshEmmiter.emit(refreshDataSubmit)
+    }
+
 }

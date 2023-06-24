@@ -1,7 +1,7 @@
 <div class="converter-container">
     <ul class="ul-style">
-        <li *ngFor="let card of cards">
-            <app-converter-card [currencyConversionCardData]="currencyConversionCardData"></app-converter-card>
+        <li *ngFor="let card of currencyConversionCardData">
+            <app-converter-card [isLoading]="isLoading" [hasData]="hasData" [card]="card" (refreshEmmiter)="refreshData($event)"></app-converter-card>
         </li>
     </ul>
 </div>
