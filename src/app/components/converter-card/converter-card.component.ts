@@ -1,4 +1,5 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, Input, OnInit } from "@angular/core";
+import { CurrencyConversionData } from "src/app/models/currencyConversionData.entity";
 
 @Component({
     selector: "app-converter-card",
@@ -7,8 +8,12 @@ import { Component, OnInit } from "@angular/core";
 })
 
 export class ConverterCardComponent implements OnInit {
+    @Input('currencyConversionCardData') currencyConversionCardData: CurrencyConversionData[] = []
 
     constructor() {}
 
-    ngOnInit() {}
+    ngOnInit() {
+        setTimeout(() => console.log("=>", this.currencyConversionCardData), 1000)
+       // console.log("=>", this.currencyConversionCardData)
+    }
 }

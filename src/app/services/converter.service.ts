@@ -6,7 +6,7 @@ import { ApiService } from "./api.service";
     providedIn: 'root'
 })
 
-export class QuotesService {
+export class ConverterService {
     
     constructor( private apiService: ApiService) {}
 

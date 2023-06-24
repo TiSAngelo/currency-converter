@@ -1,4 +1,6 @@
 import { Component, OnInit } from "@angular/core";
+import { CurrencyConversionData } from "src/app/models/currencyConversionData.entity";
+import { ConverterService } from "src/app/services/converter.service";
 
 @Component({
     selector: "app-converter",
@@ -10,26 +12,31 @@ export class CurrencyConverterComponent implements OnInit {
 
     cards = ["card1", "card2", "card3"]
 
-    constructor() {}
+    CAN_DOLLAR_TO_BRA_REAL_TYPE: string = "CAD-BRL"
+    ARG_PESO_TO_BRA_REAL_TYPE: string = "ARS-BRL"
+    ENG_LIB_TO_BRA_REAL_TYPE: string = "GBP-BRL"
 
-    ngOnInit() {}
-}
+    CURRENCY_TYPE_LIST:string = ""
 
-/*     MONEY_LIST: string = "CAD-BRL,ARS-BRL,GBP-BRL"
-    
-    constructor (
-        private quotesService: QuotesService
-    ) {}
+    currencyConversionCardData: CurrencyConversionData[] = []
 
-    ngOnInit() {
-        this.loadMoneyQuotes(this.MONEY_LIST)
+    constructor(
+        private converterService: ConverterService
+    ) {
+        this.CURRENCY_TYPE_LIST = `${this.CAN_DOLLAR_TO_BRA_REAL_TYPE},${this.ARG_PESO_TO_BRA_REAL_TYPE},${this.ENG_LIB_TO_BRA_REAL_TYPE}`
     }
 
-    loadMoneyQuotes(moneyList: any) {
-        this.quotesService.getQuotesByLocaleMoneyList(moneyList).subscribe(
+    ngOnInit() {
+        this.loadCurrencyConversion(this.CURRENCY_TYPE_LIST)
+    }
+
+    loadCurrencyConversion(currencyTypeList: string) {
+        this.converterService.getConversionByCurrencyType(currencyTypeList).subscribe(
             result => {
-                console.log("result", result)
+                this.currencyConversionCardData = result
+                console.log("currency", this.currencyConversionCardData)
             },
             err => console.log("err", err)
         )
-    } *///
+    }
+}
