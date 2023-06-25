@@ -10,8 +10,6 @@ import { ConverterService } from "src/app/services/converter.service";
 
 export class CurrencyConverterComponent implements OnInit {
 
-    //cards = ["card1", "card2", "card3"]
-
     CAN_DOLLAR_TO_BRA_REAL_TYPE: string = "CAD-BRL"
     ARG_PESO_TO_BRA_REAL_TYPE: string = "ARS-BRL"
     ENG_LIB_TO_BRA_REAL_TYPE: string = "GBP-BRL"
@@ -35,9 +33,11 @@ export class CurrencyConverterComponent implements OnInit {
     }
 
     loadCurrencyConversion(currencyTypeList: string) {
-        this.currencyConversionCardData = []
-        this.hasData = false
         this.isLoading = true
+        this.hasData = false
+
+        this.currencyConversionCardData = []
+        
         this.converterService.getConversionByCurrencyType(currencyTypeList).subscribe(
             result => {
 
@@ -50,14 +50,19 @@ export class CurrencyConverterComponent implements OnInit {
                     currency.bid = parseFloat(currency.bid).toLocaleString('pt-BR', {currency: 'BRL', minimumFractionDigits: 2, maximumFractionDigits: 2})
                     currency.name = this.formatCurrencyName(currency.name)
                 })
-
+/*                 setTimeout(() => {
+                    this.hasData = true
+                    this.isLoading = false
+                }, 5000) */
                 this.hasData = true
                 this.isLoading = false
+
                 
             },
             err => {
+                this.currencyConversionCardData.push({name: 'Dólar Canadense', bid: ''},{name: 'Peso Argentino', bid: ''},{name: 'Libra Esterlina', bid: ''}, )
                 this.isLoading = false
-            }
+            },
         )
     }
 
@@ -78,6 +83,7 @@ export class CurrencyConverterComponent implements OnInit {
     }
 
     refreshData(refreshDataSubmit: boolean) {
-        console.log("refresh", refreshDataSubmit)
+        if(refreshDataSubmit) this.loadCurrencyConversion(this.CURRENCY_TYPE_LIST)
     }
+
 }

@@ -1,5 +1,6 @@
 <div class="card-container">
     <div class="card-header"><span>{{ card.name }}</span></div>
+
     <div *ngIf="!isLoading && hasData; else loadSpinner" class="updatable-data">
         <div class="card-quote-value" [ngClass]="{
                     'red' : card.bidFloat && (card.bidFloat < 1 || card.bidFloat === 1),

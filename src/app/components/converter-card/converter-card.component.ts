@@ -18,7 +18,7 @@ export class ConverterCardComponent implements OnInit {
 
     ngOnInit() {
         if(this.card) {
-/*             this.isLoading = true
+/*             this.isLoading = false
             this.hasData = false */
         }
     }

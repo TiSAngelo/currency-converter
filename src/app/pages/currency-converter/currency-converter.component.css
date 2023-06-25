@@ -7,7 +7,6 @@
     justify-content: center;
     height: 100vh;
     width: 100vw;
-    top: 500px;
 }
 
 .ul-style {
@@ -20,8 +19,16 @@
 }
 
 
-@media (max-width: 800px)
-{.ul-style {
-    flex-direction: column;
-}
+@media (max-width: 1000px)
+{
+    .converter-container {
+        height: 100%;
+        margin-top: 100px;
+    }
+
+    .ul-style {
+        flex-direction: column;
+        align-items: center;
+        margin: 35px 0;
+    }
 }

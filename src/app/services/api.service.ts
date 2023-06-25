@@ -20,7 +20,7 @@ export class ApiService {
     get(route:string, options?:any): Observable<any> {
         return this.http.get<any>(this.API_URL + route, options || {}).pipe(retry(1), 
         catchError((error) => {
-            return throwError(() => error)
+            return throwError(error)
         }));
     }
 }
