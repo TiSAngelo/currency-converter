@@ -6,15 +6,15 @@
                     'red' : card.bidFloat && (card.bidFloat < 1 || card.bidFloat === 1),
                     'green' : card.bidFloat && (card.bidFloat > 1 || card.bidFloat === 5),
                     'blue': card.bidFloat && (card.bidFloat > 5)
-                }">R${{ card.bid }}</div>
+                }">{{ card.bid | currency:'BRL':true }}</div>
         <div class="card-footer">
             <div class="footer-details" style="border-right: solid 0.5px #CCCCCC">
-                <span style="font-size: 1vw;">Variação (%)</span>
-                <span style="font-size: 1.4vw">{{ card.pctChange }}</span>
+                <span style="font-size: 85%;">Variação (%)</span>
+                <span style="font-size: 120%">{{ card.pctChange }}</span>
             </div>
             <div class="footer-details">
-                <span style="font-size: 1vw;">Atualizado</span>
-                <span style="font-size: 1.4vw">{{ card.timestamp | date: 'HH:mm:ss'}}</span>
+                <span style="font-size: 85%">Atualizado</span>
+                <span style="font-size: 120%">{{ card.create_date | date: 'HH:mm:ss'}}</span>
             </div>
         </div>
     </div>

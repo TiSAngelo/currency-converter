@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-//import { environment } from "src/enviromnents/enviromnent"
+import { environment } from "src/environments/environment"
 import { HttpClient } from "@angular/common/http"
 import { Observable, throwError } from "rxjs";
 import {retry, catchError} from "rxjs/operators";
@@ -11,7 +11,7 @@ import {retry, catchError} from "rxjs/operators";
 
 export class ApiService {
     
-    protected API_URL: string  = 'https://economia.awesomeapi.com.br/'
+    protected API_URL: string = environment.urlCurrencyApi
 
     constructor(
         private http: HttpClient

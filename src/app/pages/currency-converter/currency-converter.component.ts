@@ -46,14 +46,10 @@ export class CurrencyConverterComponent implements OnInit {
                 })
 
                 this.currencyConversionCardData.forEach(currency => {
-                    currency.bidFloat = this.formatBRLValue(currency.bid)
-                    currency.bid = parseFloat(currency.bid).toLocaleString('pt-BR', {currency: 'BRL', minimumFractionDigits: 2, maximumFractionDigits: 2})
-                    currency.name = this.formatCurrencyName(currency.name)
+                    currency.bidFloat = parseFloat(currency.bid)
+                    currency.name = this.loadCurrencyName(currency.name)
                 })
-/*                 setTimeout(() => {
-                    this.hasData = true
-                    this.isLoading = false
-                }, 5000) */
+
                 this.hasData = true
                 this.isLoading = false
 
@@ -66,20 +62,10 @@ export class CurrencyConverterComponent implements OnInit {
         )
     }
 
-    formatBRLValue(bid: string) {
-        let stringToFloat = parseFloat(bid)
-        return this.formattedDecimals(stringToFloat, 2)
-    }
-
-    formattedDecimals(bidFloat: number, decimals: number) {
-        const ORDER_OF_MAGNITUDE = Math.pow(10, decimals)
-        return Math.trunc(bidFloat * ORDER_OF_MAGNITUDE) / ORDER_OF_MAGNITUDE
-    }
-
-    formatCurrencyName(name: string) {
+    loadCurrencyName(name: string) {
         let nameArray = name.split('/')
-        let formattedCurrencyName = nameArray[0]
-        return formattedCurrencyName
+        let formattedCurrencyDescription = nameArray[0]
+        return formattedCurrencyDescription
     }
 
     refreshData(refreshDataSubmit: boolean) {
