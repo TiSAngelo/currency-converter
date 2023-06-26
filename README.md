@@ -1,4 +1,4 @@
-# CurrencyConverterApp
+<!-- # CurrencyConverterApp
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.6.
 
@@ -24,4 +24,40 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 
 ## Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page. -->
+
+
+# 💻 Current Currency APP -  Aplicação FrontEnd
+
+### IMPORTANTE
+Para rodar o projeto localmente é necessário estar utilizando o NODEJS na sua versão 12.14.0.
+*Recomenda-se que seja instalado o NVM (Node Version Manager) em sua máquina para conseguir alterar as versões facilmente.* [NVM](https://github.com/nvm-sh/nvm)
+
+O Projeto foi gerado com Angular CLI (https://github.com/angular/angular-cli) em sua versão 12.2.6
+
+### SOBRE O PROJETO
+
+O Projeto CurrentCurrencyApp consiste em uma aplicação frontend desenvolvida em angular 12, sem o uso de libs de componentes e todo o conteúdo básico apresentado em tela é consumido por meio de requisições à API de Cotações (https://docs.awesomeapi.com.br/api-de-moedas)
+
+
+Para iniciar o desenvolvimento é necessário o Nodejs, Npm, Angular-CLI e uma IDE (recomendo o VSCode).
+
+## PARA RODAR O PROJETO LOCALMENTE DIGITE O COMANDO:
+
+```
+npm start
+```
+
+Após, navegue para `http://localhost:4200/`, a aplicação irá recarregar automaticamente se você alterar qualquer arquivo.
+
+## PARA GERAR O BUILD DIGITE O COMANDO:
+
+```
+npm run build
+```
+
+## 🔧 Características :
+- Angular 12+ & Typescript
+- CSS
+ 
+
