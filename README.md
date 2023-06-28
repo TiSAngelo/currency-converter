@@ -1,32 +1,3 @@
-<!-- # CurrencyConverterApp
-
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.6.
-
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page. -->
-
-
 # 💻 Current Currency APP -  Aplicação FrontEnd
 
 ### IMPORTANTE
@@ -42,6 +13,44 @@ O Projeto CurrentCurrencyApp consiste em uma aplicação frontend desenvolvida e
 
 Para iniciar o desenvolvimento é necessário o Nodejs, Npm, Angular-CLI e uma IDE (recomendo o VSCode).
 
+
+## Estrutura
+
+A árvore abaixo representa os diretórios propóstos para compor a aplicação Angular.
+
+```
+.
+└── src
+    ├── app
+    │   ├── components
+    │   ├── data
+    │   ├── pages
+    │   ├── assets
+    │   └── environments
+    └── styles
+```
+
+### `Components`
+
+O diretório `components` é um container de componentes que serão declarados no AppModule. O diretório contém os componentes quem fazem parte da estrutura do Projeto a nível de página, como o header e o card de apresentação das cotações.
+
+### `Data`
+
+O diretório `data` contém os modelos de entidade e serviços que conectam com a API.
+
+### `Pages`
+
+O diretório `pages` contém o Dashboard para os cards.
+
+### `Assets`
+
+O diretório `assets` contém os ativos visuais utilizados no projeto, como logotipo e loader.
+
+### `Environments`
+
+O diretório `environments` contém os arquivos de configuração de variáveis de ambiente da aplicação.
+
+___
 ## PARA RODAR O PROJETO LOCALMENTE DIGITE O COMANDO:
 
 ```
@@ -50,12 +59,21 @@ npm start
 
 Após, navegue para `http://localhost:4200/`, a aplicação irá recarregar automaticamente se você alterar qualquer arquivo.
 
+
+___
 ## PARA GERAR O BUILD DIGITE O COMANDO:
 
 ```
 npm run build
 ```
 
+## PARA EXECUTAR TESTES UNITÁRIOS VIA [Karma](https://karma-runner.github.io) DIGITE O COMANDO:
+
+```
+npm test
+```
+
+___
 ## 🔧 Características :
 - Angular 12+ & Typescript
 - CSS

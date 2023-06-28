@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { ConverterCardComponent } from './components/converter-card/converter-card.component';
-import { NavbarComponent } from './components/navbar/navbar.component';
+import { HeaderComponent } from './components/header/header.component';
 import { CurrencyConverterComponent } from './pages/currency-converter/currency-converter.component';
 import localePt from '@angular/common/locales/pt';
 import {registerLocaleData} from '@angular/common';
@@ -14,7 +14,7 @@ registerLocaleData(localePt)
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent,
+    HeaderComponent,
     CurrencyConverterComponent,
     ConverterCardComponent
   ],

@@ -11,5 +11,4 @@ export class CurrencyConversionData {
     pctChange?: string;
     timestamp?: string;
     varBid?: string;
-
 }

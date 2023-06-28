@@ -1,12 +1,37 @@
+import { HttpClientModule } from '@angular/common/http';
+import { LOCALE_ID, DEFAULT_CURRENCY_CODE } from '@angular/core';
 import { TestBed } from '@angular/core/testing';
+import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
+import { ConverterCardComponent } from './components/converter-card/converter-card.component';
+import { HeaderComponent } from './components/header/header.component';
+import { CurrencyConverterComponent } from './pages/currency-converter/currency-converter.component';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [
-        AppComponent
+        AppComponent,
+        HeaderComponent,
+        CurrencyConverterComponent,
+        ConverterCardComponent
       ],
+      imports: [
+        BrowserModule,
+        HttpClientModule
+      ],
+      providers: [
+        {
+            provide: LOCALE_ID,
+            useValue: 'pt-BR'
+        },
+    
+        {
+            provide:  DEFAULT_CURRENCY_CODE,
+            useValue: 'BRL'
+        },
+    ]
+    
     }).compileComponents();
   });
 
@@ -22,10 +47,4 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('currency-converter-app');
   });
 
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('currency-converter-app app is running!');
-  });
 });

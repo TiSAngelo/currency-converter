@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output } from "@angular/core";
-import { CurrencyConversionData } from "src/app/models/currencyConversionData.entity";
+import { CurrencyConversionData } from "src/app/data/models/currencyConversionData.entity";
 
 @Component({
     selector: "app-converter-card",
