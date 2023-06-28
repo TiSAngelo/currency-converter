@@ -1,4 +1,4 @@
-# 💻 Current Currency APP -  Aplicação FrontEnd
+# 💻 Currency Converter APP -  Aplicação FrontEnd
 
 ### IMPORTANTE
 Para rodar o projeto localmente é necessário estar utilizando o NODEJS na sua versão 12.14.0.
@@ -8,7 +8,7 @@ O Projeto foi gerado com Angular CLI (https://github.com/angular/angular-cli) em
 
 ### SOBRE O PROJETO
 
-O Projeto CurrentCurrencyApp consiste em uma aplicação frontend desenvolvida em angular 12, sem o uso de libs de componentes e todo o conteúdo básico apresentado em tela é consumido por meio de requisições à API de Cotações (https://docs.awesomeapi.com.br/api-de-moedas)
+O Projeto CurrencyConverterApp consiste em uma aplicação frontend desenvolvida em angular 12, sem o uso de libs de componentes e todo o conteúdo básico apresentado em tela é consumido por meio de requisições à API de Cotações (https://docs.awesomeapi.com.br/api-de-moedas)
 
 
 Para iniciar o desenvolvimento é necessário o Nodejs, Npm, Angular-CLI e uma IDE (recomendo o VSCode).
