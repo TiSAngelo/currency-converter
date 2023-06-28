@@ -10,6 +10,7 @@ O Projeto foi gerado com Angular CLI (https://github.com/angular/angular-cli) em
 
 O Projeto CurrentCurrencyApp consiste em uma aplicação frontend desenvolvida em angular 12, sem o uso de libs de componentes e todo o conteúdo básico apresentado em tela é consumido por meio de requisições à API de Cotações (https://docs.awesomeapi.com.br/api-de-moedas)
 
+O objetivo do Current Currency App é mostrar a conversão de três moedas para Real Brasileiro (BRL)
 
 Para iniciar o desenvolvimento é necessário o Nodejs, Npm, Angular-CLI e uma IDE (recomendo o VSCode).
 
@@ -32,7 +33,7 @@ A árvore abaixo representa os diretórios propóstos para compor a aplicação 
 
 ### `Components`
 
-O diretório `components` é um container de componentes que serão declarados no AppModule. O diretório contém os componentes quem fazem parte da estrutura do Projeto a nível de página, como o header e o card de apresentação das cotações.
+O diretório `components` é um container de componentes que serão declarados no AppModule. O diretório contém os componentes que fazem parte da estrutura do Projeto a nível de página, como o header e o card de apresentação das cotações.
 
 ### `Data`
 
@@ -51,7 +52,14 @@ O diretório `assets` contém os ativos visuais utilizados no projeto, como logo
 O diretório `environments` contém os arquivos de configuração de variáveis de ambiente da aplicação.
 
 ___
-## PARA RODAR O PROJETO LOCALMENTE DIGITE O COMANDO:
+
+### PARA INSTALAR AS DEPENDÊNCIAS DO PROJETO E CRIAR A PASTA NODE MODULES DIGITE O COMANDO:
+
+```
+npm install
+```
+
+### PARA RODAR O PROJETO LOCALMENTE DIGITE O COMANDO:
 
 ```
 npm start
@@ -61,13 +69,13 @@ Após, navegue para `http://localhost:4200/`, a aplicação irá recarregar auto
 
 
 ___
-## PARA GERAR O BUILD DIGITE O COMANDO:
+### PARA GERAR O BUILD DIGITE O COMANDO:
 
 ```
 npm run build
 ```
 
-## PARA EXECUTAR TESTES UNITÁRIOS VIA [Karma](https://karma-runner.github.io) DIGITE O COMANDO:
+### PARA EXECUTAR TESTES UNITÁRIOS VIA [Karma](https://karma-runner.github.io) DIGITE O COMANDO:
 
 ```
 npm test

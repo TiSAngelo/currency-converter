@@ -1,7 +1,6 @@
 export class CurrencyConversionData {
     ask?: string;
-    bid!: string;
-    bidFloat?: number
+    bid!: number | null;
     code?: string;
     codein?: string;
     create_date?: string;

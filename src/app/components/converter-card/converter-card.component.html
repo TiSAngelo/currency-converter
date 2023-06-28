@@ -3,9 +3,9 @@
 
     <div *ngIf="!isLoading && hasData; else loadSpinner" class="updatable-data">
         <div class="card-quote-value" [ngClass]="{
-                    'red' : card.bidFloat && (card.bidFloat < 1 || card.bidFloat === 1),
-                    'green' : card.bidFloat && (card.bidFloat > 1 || card.bidFloat === 5),
-                    'blue': card.bidFloat && (card.bidFloat > 5)
+                    'red' : card.bid && (card.bid < 1 || card.bid === 1),
+                    'green' : card.bid && (card.bid > 1 && card.bid < 5 || card.bid > 1 && card.bid === 5),
+                    'blue': card.bid && (card.bid > 5)
                 }">{{ card.bid | currency:'BRL':true }}</div>
         <div class="card-footer">
             <div class="footer-details" style="border-right: solid 0.5px #CCCCCC">

@@ -41,22 +41,18 @@ export class CurrencyConverterComponent implements OnInit {
         this.converterService.getConversionByCurrencyType(currencyTypeList).subscribe(
             result => {
 
-                Object.keys(result).forEach(key => {
-                    this.currencyConversionCardData.push(result[key])
-                })
-
-                this.currencyConversionCardData.forEach(currency => {
-                    currency.bidFloat = parseFloat(currency.bid)
-                    currency.name = this.loadCurrencyName(currency.name)
-                })
+                for(let prop in result) {
+                    result[prop].bid = parseFloat(result[prop].bid)
+                    result[prop].name = this.loadCurrencyName(result[prop].name)
+                    this.currencyConversionCardData.push(result[prop])
+                }
 
                 this.hasData = true
                 this.isLoading = false
 
-                
             },
             err => {
-                this.currencyConversionCardData.push({name: 'Dólar Canadense', bid: ''},{name: 'Peso Argentino', bid: ''},{name: 'Libra Esterlina', bid: ''}, )
+                this.currencyConversionCardData.push({name: 'Dólar Canadense', bid: null},{name: 'Peso Argentino', bid: null},{name: 'Libra Esterlina', bid: null} )
                 this.isLoading = false
             },
         )
